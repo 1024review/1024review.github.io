@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://frrj.us/"/>
-  <updated>2017-06-13T01:09:02.000Z</updated>
+  <updated>2017-06-13T03:30:08.000Z</updated>
   <id>https://frrj.us/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【技术分享】HEXO 的测试文章</title>
+    <link href="https://frrj.us/2017/06/13/%E3%80%90%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E3%80%91HEXO-%E7%9A%84%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
+    <id>https://frrj.us/2017/06/13/【技术分享】HEXO-的测试文章/</id>
+    <published>2017-06-13T03:28:53.000Z</published>
+    <updated>2017-06-13T03:30:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一篇测试文章，用来测试即刻app是否可以拿到feed。</p>
+<p>同样，测试是否可以读取desc</p>
+]]></content>
+    
+    <summary type="html">
+    
+      github page搭建hexo博客的测试文章
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
