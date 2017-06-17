@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://frrj.us/"/>
-  <updated>2017-06-17T01:55:48.000Z</updated>
+  <updated>2017-06-17T02:00:50.000Z</updated>
   <id>http://frrj.us/</id>
   
   <author>
@@ -14,6 +14,162 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>国内技术团队博客一览</title>
+    <link href="http://frrj.us/2017/06/17/%E5%9B%BD%E5%86%85%E6%8A%80%E6%9C%AF%E5%9B%A2%E9%98%9F%E5%8D%9A%E5%AE%A2%E4%B8%80%E8%A7%88/"/>
+    <id>http://frrj.us/2017/06/17/国内技术团队博客一览/</id>
+    <published>2017-06-17T02:00:40.000Z</published>
+    <updated>2017-06-17T02:00:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>收集国内外技术团队博客，不定期更新，欢迎收藏</p>
+<p><strong>1.腾讯</strong></p>
+<ul>
+<li><a href="https://isux.tencent.com" target="_blank" rel="external">https://isux.tencent.com</a> 腾讯ISUX</li>
+<li><a href="http://www.alloyteam.com" target="_blank" rel="external">http://www.alloyteam.com</a> 腾讯AlloyTeam</li>
+<li><a href="http://cdc.tencent.com" target="_blank" rel="external">http://cdc.tencent.com</a> 腾讯CDC</li>
+<li><a href="http://tencentdba.com/" target="_blank" rel="external">http://tencentdba.com/</a> 腾讯DBA团队</li>
+<li><a href="http://gdc.qq.com" target="_blank" rel="external">http://gdc.qq.com</a> QQ游戏设计中心</li>
+<li><a href="http://mxd.tencent.com" target="_blank" rel="external">http://mxd.tencent.com</a> 腾讯MXD移动互联网设计中心</li>
+<li><a href="http://tgideas.qq.com" target="_blank" rel="external">http://tgideas.qq.com</a> 腾讯TGidea</li>
+<li><a href="http://impd.tencent.com" target="_blank" rel="external">http://impd.tencent.com</a> QQ客户端团队博客</li>
+<li><a href="http://bugly.qq.com/blog" target="_blank" rel="external">http://bugly.qq.com/blog</a> 腾讯Bugly博客</li>
+</ul>
+<p><strong>2.淘宝</strong></p>
+<ul>
+<li><a href="http://ued.taobao.org/blog/" target="_blank" rel="external">http://ued.taobao.org/blog/</a> 淘宝UED（2017/3/1作者访问失效，已经通知官方）</li>
+<li><a href="http://taobaofed.org" target="_blank" rel="external">http://taobaofed.org</a> 淘宝FED</li>
+<li><a href="http://ux.etao.com" target="_blank" rel="external">http://ux.etao.com</a> 一淘UX</li>
+<li><a href="http://www.aliued.cn" target="_blank" rel="external">http://www.aliued.cn</a> 阿里巴巴UED</li>
+<li><a href="http://www.aliued.com" target="_blank" rel="external">http://www.aliued.com</a> 阿里巴巴UED国际站</li>
+<li><a href="http://ued.taobao.com/blog" target="_blank" rel="external">http://ued.taobao.com/blog</a> 淘宝UED</li>
+</ul>
+<p><strong>3.携程</strong></p>
+<ul>
+<li><a href="http://ued.ctrip.com/blog/" target="_blank" rel="external">http://ued.ctrip.com/blog/</a> 携程UED</li>
+</ul>
+<p><strong>4.百度</strong></p>
+<ul>
+<li><a href="http://mux.baidu.com" target="_blank" rel="external">http://mux.baidu.com</a> 百度MUX</li>
+<li><a href="http://ued.baidu.com/" target="_blank" rel="external">http://ued.baidu.com/</a> 百度搜索用户体验中心</li>
+</ul>
+<p><strong>5.美团</strong></p>
+<ul>
+<li><a href="http://tech.meituan.com" target="_blank" rel="external">http://tech.meituan.com</a> 美团点评技术团队</li>
+<li><a href="http://fe.meituan.com" target="_blank" rel="external">http://fe.meituan.com</a> 美团前端技术团队</li>
+</ul>
+<p><strong>6.网易</strong></p>
+<ul>
+<li><a href="http://uedc.163.com" target="_blank" rel="external">http://uedc.163.com</a> 网易UEDC</li>
+</ul>
+<p><strong>7.新浪</strong></p>
+<ul>
+<li><a href="http://ued.sina.com.cn" target="_blank" rel="external">http://ued.sina.com.cn</a> 新浪UED</li>
+<li><a href="http://udc.weibo.com" target="_blank" rel="external">http://udc.weibo.com</a> 新浪UDC</li>
+</ul>
+<p><strong>8.UC</strong></p>
+<ul>
+<li><a href="http://tech.uc.cn/" target="_blank" rel="external">http://tech.uc.cn/</a> UC技术团队</li>
+</ul>
+<p><strong>9.七牛</strong></p>
+<ul>
+<li><a href="http://blog.qiniu.com" target="_blank" rel="external">http://blog.qiniu.com</a> 七牛技术博客</li>
+</ul>
+<p><strong>10.京东</strong></p>
+<ul>
+<li><a href="http://jdc.jd.com" target="_blank" rel="external">http://jdc.jd.com</a> 京东设计中心</li>
+</ul>
+<p><strong>11.搜狗</strong></p>
+<ul>
+<li><a href="http://ued.sogou.com" target="_blank" rel="external">http://ued.sogou.com</a> 搜狗UED</li>
+</ul>
+<p><strong>12.搜狐</strong></p>
+<ul>
+<li><a href="http://mued.sohu.com" target="_blank" rel="external">http://mued.sohu.com</a> 搜狐MUED</li>
+<li><a href="http://vc.changyou.com/index.shtml" target="_blank" rel="external">http://vc.changyou.com/index.shtml</a> 搜狐畅游VC</li>
+</ul>
+<p>———-</p>
+<blockquote>
+<p>2017 / 3 / 1 更新</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;收集国内外技术团队博客，不定期更新，欢迎收藏&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.腾讯&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://isux.tencent.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https:
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Genymotion安装中遇到的问题</title>
+    <link href="http://frrj.us/2017/06/17/Genymotion%E5%AE%89%E8%A3%85%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://frrj.us/2017/06/17/Genymotion安装中遇到的问题/</id>
+    <published>2017-06-17T01:59:50.000Z</published>
+    <updated>2017-06-17T01:59:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.官网 <a href="http://www.genymotion.com" target="_blank" rel="external">http://www.genymotion.com</a></p>
+<p>2.注册，登录。因为不登录右上角不显示下载按钮，并且不能下载。</p>
+<p>3.下载，免费版的下载就好，推荐直接下载带有VirtualBox版本的</p>
+<p>4.登录之后会发现下载镜像发现特别慢，解决方法：</p>
+<p>找到这个路径，打开之后找到这样的.ova文件，注意路径</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3017940-28f8370489cee221.png" alt="请输入图片描述"></p>
+<p>把名字拷贝下来</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3017940-0d49f02b94f35905.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="请输入图片描述"></p>
+<p>拼接到<a href="http://files2.genymotion.com/dists/x.x.x的后面（x.x.x是版本号）" target="_blank" rel="external">http://files2.genymotion.com/dists/x.x.x的后面（x.x.x是版本号）</a></p>
+<p>下面我贴出几个地址 你观察一下特点，然后就会知道你要下载的镜像文件的地址了</p>
+<p>替换文件后再下载镜像，你会发现直接到100%</p>
+<p><a href="http://files2.genymotion.com/dists/4.2.2/ova/genymotion_vbox86p_4.2.2_160608_211959.ova" target="_blank" rel="external">http://files2.genymotion.com/dists/4.2.2/ova/genymotion_vbox86p_4.2.2_160608_211959.ova</a></p>
+<p><a href="http://files2.genymotion.com/dists/6.0.0/ova/genymotion_vbox86p_6.0_160608_210807.ova" target="_blank" rel="external">http://files2.genymotion.com/dists/6.0.0/ova/genymotion_vbox86p_6.0_160608_210807.ova</a></p>
+<p><a href="http://files2.genymotion.com/dists/6.0.0/ova/genymotion_vbox86p_6.0_160825_141918.ova" target="_blank" rel="external">http://files2.genymotion.com/dists/6.0.0/ova/genymotion_vbox86p_6.0_160825_141918.ova</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.官网 &lt;a href=&quot;http://www.genymotion.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.genymotion.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.注册，登录。因为不登录右上角不显示下载按钮，并且不能
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Android 代码规范</title>
+    <link href="http://frrj.us/2017/06/17/Android-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+    <id>http://frrj.us/2017/06/17/Android-代码规范/</id>
+    <published>2017-06-17T01:58:57.000Z</published>
+    <updated>2017-06-17T01:59:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.类名禁止出现特殊符号</p>
+<p>2.变量名不能以特殊符号开头或结尾</p>
+<p>3.变量名中禁止使用拼音加英文，更不能出现汉字。应该使用全英文</p>
+<p>4.类名命名必须使用大驼峰命名法，变量必须使用小驼峰命名法。静态变量全部大写，特殊单词（领域模型的相关命名）例外，例如DO / BO / DTO / VO 等</p>
+<p>5.见名知意，命名简单明了</p>
+<p>6.缩写单词要参照习惯，不能主观更改，例如AbstractClase写成AbsClass</p>
+<p>7.抽象类命名使用 Abstract 或 Base 开头；异常类命名使用 Exception 结尾；测试类<br>命名以它要测试的类的名称开始，以 Test 结尾。项目上线前统一删除Test类</p>
+<p>8.命名中避免关键字</p>
+<p>9.包名统一小写，com.domain.模块.作用 ，Model类和数据接口类单独列包</p>
+<p>10.枚举类和变量以Enum（enum）开头（结尾）</p>
+<p>11.类名命名为 类型（Enum/Abstract）+ 类名（GetMessage）+ 定义（Utils/Exception）；变量命名可以单独说明在本类中的作用，例如userMessages；id的命名应该为 “<code>模块_类型_变量名“</code>,个别需要加标识符。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.类名禁止出现特殊符号&lt;/p&gt;
+&lt;p&gt;2.变量名不能以特殊符号开头或结尾&lt;/p&gt;
+&lt;p&gt;3.变量名中禁止使用拼音加英文，更不能出现汉字。应该使用全英文&lt;/p&gt;
+&lt;p&gt;4.类名命名必须使用大驼峰命名法，变量必须使用小驼峰命名法。静态变量全部大写，特殊单词（领域模型的相关命名
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Service保活的三个方法</title>

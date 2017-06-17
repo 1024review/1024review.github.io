@@ -7,7 +7,7 @@
   <meta name="keyword" content="undefined">
   <title>
     
-      凡人日记
+      Genymotion安装中遇到的问题 | 凡人日记
     
   </title>
   <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
@@ -90,67 +90,72 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
-</div>
-<main class="app-body" id="archives">
-
-
-
-  <section class="time-section">
-  <h1 class="section-year">
-    2017
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/国内技术团队博客一览/" class="archive-title">国内技术团队博客一览</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/Genymotion安装中遇到的问题/" class="archive-title">Genymotion安装中遇到的问题</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/Android-代码规范/" class="archive-title">Android 代码规范</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/Service保活的三个方法/" class="archive-title">Service保活的三个方法</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/AsyncTask的缺陷和问题/" class="archive-title">AsyncTask的缺陷和问题</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/15/【技术分享】在iPhone上多开微信-安装迅雷/" class="archive-title">【技术分享】在iPhone上多开微信/安装迅雷</a>
-        <p class="archive-date">06-15</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/13/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">06-13</p>
-      </div>
-    
+  <h2>Genymotion安装中遇到的问题</h2>
+  <p class="post-date">2017-06-17</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
   </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content"><p>1.官网 <a href="http://www.genymotion.com" target="_blank" rel="external">http://www.genymotion.com</a></p>
+<p>2.注册，登录。因为不登录右上角不显示下载按钮，并且不能下载。</p>
+<p>3.下载，免费版的下载就好，推荐直接下载带有VirtualBox版本的</p>
+<p>4.登录之后会发现下载镜像发现特别慢，解决方法：</p>
+<p>找到这个路径，打开之后找到这样的.ova文件，注意路径</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3017940-28f8370489cee221.png" alt="请输入图片描述"></p>
+<p>把名字拷贝下来</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3017940-0d49f02b94f35905.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="请输入图片描述"></p>
+<p>拼接到<a href="http://files2.genymotion.com/dists/x.x.x的后面（x.x.x是版本号）" target="_blank" rel="external">http://files2.genymotion.com/dists/x.x.x的后面（x.x.x是版本号）</a></p>
+<p>下面我贴出几个地址 你观察一下特点，然后就会知道你要下载的镜像文件的地址了</p>
+<p>替换文件后再下载镜像，你会发现直接到100%</p>
+<p><a href="http://files2.genymotion.com/dists/4.2.2/ova/genymotion_vbox86p_4.2.2_160608_211959.ova" target="_blank" rel="external">http://files2.genymotion.com/dists/4.2.2/ova/genymotion_vbox86p_4.2.2_160608_211959.ova</a></p>
+<p><a href="http://files2.genymotion.com/dists/6.0.0/ova/genymotion_vbox86p_6.0_160608_210807.ova" target="_blank" rel="external">http://files2.genymotion.com/dists/6.0.0/ova/genymotion_vbox86p_6.0_160608_210807.ova</a></p>
+<p><a href="http://files2.genymotion.com/dists/6.0.0/ova/genymotion_vbox86p_6.0_160825_141918.ova" target="_blank" rel="external">http://files2.genymotion.com/dists/6.0.0/ova/genymotion_vbox86p_6.0_160825_141918.ova</a></p>
 </section>
-
+    
+    <div id="comments"></div>
+  </article>
 </main>
 
 <script>
   (function () {
-    var url = 'http://frrj.us/archives/2017/06/index.html';
+    var url = 'http://frrj.us/2017/06/17/Genymotion安装中遇到的问题/';
     $('#article-banner').geopattern(url);
     $('.header').removeClass('fixed-header');
+
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: url
+    });
+    
+    var gitmentConfig = "undefined";
+    if (gitmentConfig != "undefined") {
+      var gitment = new Gitment({
+        owner: "undefined",
+        repo: "undefined",
+        oauth: {
+          client_id: "undefined",
+          client_secret: "undefined"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
