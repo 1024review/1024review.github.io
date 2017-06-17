@@ -7,7 +7,7 @@
   <meta name="keyword" content="undefined">
   <title>
     
-      凡人日记
+      Service保活的三个方法 | 凡人日记
     
   </title>
   <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
@@ -90,52 +90,77 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
-</div>
-<main class="app-body" id="archives">
-
-
-
-  <section class="time-section">
-  <h1 class="section-year">
-    2017
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/Service保活的三个方法/" class="archive-title">Service保活的三个方法</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/AsyncTask的缺陷和问题/" class="archive-title">AsyncTask的缺陷和问题</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/15/【技术分享】在iPhone上多开微信-安装迅雷/" class="archive-title">【技术分享】在iPhone上多开微信/安装迅雷</a>
-        <p class="archive-date">06-15</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/13/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">06-13</p>
-      </div>
-    
+  <h2>Service保活的三个方法</h2>
+  <p class="post-date">2017-06-17</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
   </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content"><p>详细文章之后再写，腾讯bugly有一篇特别详细，自己可以去微信找历史信息</p>
+<ul>
+<li>A.提供进程优先级，降低进程被杀死的概率</li>
+</ul>
+<p>方法一：监控手机锁屏解锁事件，在屏幕锁屏时启动1个像素的 Activity，在用户解锁时将 Activity 销毁掉。</p>
+<p>方法二：启动前台service。</p>
+<p>方法三：提升service优先级：</p>
+<p>在AndroidManifest.xml文件中对于intent-filter可以通过android:priority = “1000”这个属性设置最高优先级，<br>1000是最高值，如果数字越小则优先级越低，同时适用于广播。</p>
+<ul>
+<li>B. 在进程被杀死后，进行拉活</li>
+</ul>
+<p>方法一：注册高频率广播接收器，唤起进程。如网络变化，解锁屏幕，开机等</p>
+<p>方法二：双进程相互唤起。</p>
+<p>方法三：依靠系统唤起。</p>
+<p>方法四：onDestroy方法里重启service：service +broadcast 方式，就是当service走ondestory的时候，发送一个自定义的广播，当收到广播的时候，重新启动service；</p>
+<ul>
+<li>C. 依靠第三方</li>
+</ul>
+<p>根据终端不同，在小米手机（包括 MIUI）接入小米推送、华为手机接入华为推送；其他手机可以考虑接入腾讯信鸽或极光推送与小米推送做 A/B Test。</p>
 </section>
-
+    
+    <div id="comments"></div>
+  </article>
 </main>
 
 <script>
   (function () {
-    var url = 'http://frrj.us/archives/index.html';
+    var url = 'http://frrj.us/2017/06/17/Service保活的三个方法/';
     $('#article-banner').geopattern(url);
     $('.header').removeClass('fixed-header');
+
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: url
+    });
+    
+    var gitmentConfig = "undefined";
+    if (gitmentConfig != "undefined") {
+      var gitment = new Gitment({
+        owner: "undefined",
+        repo: "undefined",
+        oauth: {
+          client_id: "undefined",
+          client_secret: "undefined"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>

@@ -93,6 +93,41 @@
   
     <article class="article-card">
       <h2 class="article-head">
+        <a href="/2017/06/17/Service保活的三个方法/">Service保活的三个方法</a>
+      </h2>
+      <p class="article-date">2017-06-17</p>
+      
+      <div class="article-summary">
+        
+          详细文章之后再写，腾讯bugly有一篇特别详细，自己可以去微信找历史信息
+
+A.提供进程优先级，降低进程被杀死的概率
+
+方法一：监控手机锁屏解锁事件，在屏幕锁屏时启动1个像素的 Activity，在用户解锁时将 Activity 销毁掉。
+方法二：启动前台service。
+方法三：提升ser ...
+        
+      </div>
+      <a class="more" href="/2017/06/17/Service保活的三个方法/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/06/17/AsyncTask的缺陷和问题/">AsyncTask的缺陷和问题</a>
+      </h2>
+      <p class="article-date">2017-06-17</p>
+      
+      <div class="article-summary">
+        
+          只是分析一下AsyncTask的缺陷和问题
+asynctask对应的线程池ThreadPoolExecutor都是进程范围内共享的，都是static的，所以是asynctask控制着进程范围内所有的子类实例。由于这个限制的存在，当使用默认线程池时，如果线程数超过线程池的最大容量，线程池就会爆 ...
+        
+      </div>
+      <a class="more" href="/2017/06/17/AsyncTask的缺陷和问题/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
         <a href="/2017/06/15/【技术分享】在iPhone上多开微信-安装迅雷/">【技术分享】在iPhone上多开微信/安装迅雷</a>
       </h2>
       <p class="article-date">2017-06-15</p>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://frrj.us/"/>
-  <updated>2017-06-15T07:51:02.000Z</updated>
+  <updated>2017-06-17T01:55:48.000Z</updated>
   <id>http://frrj.us/</id>
   
   <author>
@@ -14,6 +14,81 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Service保活的三个方法</title>
+    <link href="http://frrj.us/2017/06/17/Service%E4%BF%9D%E6%B4%BB%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E6%B3%95/"/>
+    <id>http://frrj.us/2017/06/17/Service保活的三个方法/</id>
+    <published>2017-06-17T01:55:30.000Z</published>
+    <updated>2017-06-17T01:55:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>详细文章之后再写，腾讯bugly有一篇特别详细，自己可以去微信找历史信息</p>
+<ul>
+<li>A.提供进程优先级，降低进程被杀死的概率</li>
+</ul>
+<p>方法一：监控手机锁屏解锁事件，在屏幕锁屏时启动1个像素的 Activity，在用户解锁时将 Activity 销毁掉。</p>
+<p>方法二：启动前台service。</p>
+<p>方法三：提升service优先级：</p>
+<p>在AndroidManifest.xml文件中对于intent-filter可以通过android:priority = “1000”这个属性设置最高优先级，<br>1000是最高值，如果数字越小则优先级越低，同时适用于广播。</p>
+<ul>
+<li>B. 在进程被杀死后，进行拉活</li>
+</ul>
+<p>方法一：注册高频率广播接收器，唤起进程。如网络变化，解锁屏幕，开机等</p>
+<p>方法二：双进程相互唤起。</p>
+<p>方法三：依靠系统唤起。</p>
+<p>方法四：onDestroy方法里重启service：service +broadcast 方式，就是当service走ondestory的时候，发送一个自定义的广播，当收到广播的时候，重新启动service；</p>
+<ul>
+<li>C. 依靠第三方</li>
+</ul>
+<p>根据终端不同，在小米手机（包括 MIUI）接入小米推送、华为手机接入华为推送；其他手机可以考虑接入腾讯信鸽或极光推送与小米推送做 A/B Test。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;详细文章之后再写，腾讯bugly有一篇特别详细，自己可以去微信找历史信息&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A.提供进程优先级，降低进程被杀死的概率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;方法一：监控手机锁屏解锁事件，在屏幕锁屏时启动1个像素的 Activity，在用户解锁时将 Activi
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>AsyncTask的缺陷和问题</title>
+    <link href="http://frrj.us/2017/06/17/AsyncTask%E7%9A%84%E7%BC%BA%E9%99%B7%E5%92%8C%E9%97%AE%E9%A2%98/"/>
+    <id>http://frrj.us/2017/06/17/AsyncTask的缺陷和问题/</id>
+    <published>2017-06-17T01:54:52.000Z</published>
+    <updated>2017-06-17T01:55:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>只是分析一下AsyncTask的缺陷和问题</p>
+<p>asynctask对应的线程池ThreadPoolExecutor都是进程范围内共享的，都是static的，所以是asynctask控制着进程范围内所有的子类实例。由于这个限制的存在，当使用默认线程池时，如果线程数超过线程池的最大容量，线程池就会爆掉(3.0后默认串行执行，不会出现这个问题)。针对这种情况，可以尝试自定义线程池，配合asynctask使用。</p>
+<blockquote>
+<p>核心线程池中最多有CPU_COUNT+1个，最多有CPU_COUNT*2+1个，线程等待队列的最大等待数为128，但是可以自定义线程池。线程池是由AsyncTask来管理的，线程池允许tasks并行运行，需要注意的是并发情况下数据的一致性问题，新数据可能会被老数据覆盖掉，类似volatile变量。所以希望tasks能够串行运行的话，使用SERIAL_EXECUTOR。</p>
+</blockquote>
+<p>AsyncTask在SDK 1.6之前，异步任务是放在一个独立的线程中的。也就是说所有的异步操作需要一个一个进行。1.6之后可以进行五个。如果AsyncTask实例超过5个则需要等待。2.3版本之前这个问题是无法解决了。<br>2.3之后可以自定义线程池，但是必须放弃AsyncTask，自己创建线程池来管理Thread。</p>
+<p><em>从Android3.0开始对AsyncTask的API作出了一些调整：每次只启动一个线程执行一个任务，完成之后再执行第二个任务，也就是相当于只有一个后台线程在执行所提交的任务</em></p>
+<p><strong>1.生命周期</strong></p>
+<p>很多开发者会认为一个在Activity中创建的AsyncTask会随着Activity的销毁而销毁。然而事实并非如此。AsyncTask会一直执行，直到doInBackground()方法执行完毕。然后，如果cancel(boolean)被调用,那么onCancelled(Result result)方法会被执行；否则，执行onPostExecute(Result result)方法。如果我们的Activity销毁之前，没有取消AsyncTask，这有可能让我们的AsyncTask崩溃(crash)。因为它想要处理的view已经不在了。所以，我们总是必须确保在销毁活动之前取消任务。总之，我们使用AsyncTask需要确保AsyncTask正确的取消。</p>
+<p><strong>2.内存泄漏</strong></p>
+<p>如果AsyncTask被声明为Activity的非静态的内部类，那么AsyncTask会保留一个对Activity的引用。如果Activity已经被销毁，AsyncTask的后台线程还在执行，它将继续在内存里保留这个引用，导致Activity无法被回收，引起内存泄漏。</p>
+<p><strong>3.结果丢失</strong></p>
+<p>屏幕旋转或Activity在后台被系统杀掉等情况会导致Activity的重新创建，之前运行的AsyncTask会持有一个之前Activity的引用，这个引用已经无效，这时调用onPostExecute()再去更新界面将不再生效。</p>
+<p><strong>4.并行还是串行</strong></p>
+<p>在Android1.6之前的版本，AsyncTask是串行的，在1.6至2.3的版本，改成了并行的。在2.3之后的版本又做了 修改，可以支持并行和串行，当想要串行执行时，直接执行execute()方法，如果需要执行executeOnExecutor(Executor)。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;只是分析一下AsyncTask的缺陷和问题&lt;/p&gt;
+&lt;p&gt;asynctask对应的线程池ThreadPoolExecutor都是进程范围内共享的，都是static的，所以是asynctask控制着进程范围内所有的子类实例。由于这个限制的存在，当使用默认线程池时，如果线程数超
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>【技术分享】在iPhone上多开微信/安装迅雷</title>
