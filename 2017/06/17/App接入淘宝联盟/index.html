@@ -7,7 +7,7 @@
   <meta name="keyword" content="undefined">
   <title>
     
-      凡人日记
+      App接入淘宝联盟 | 凡人日记
     
   </title>
   <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
@@ -90,72 +90,63 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
-</div>
-<main class="app-body" id="archives">
-
-
-
-  <section class="time-section">
-  <h1 class="section-year">
-    2017
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/App接入淘宝联盟/" class="archive-title">App接入淘宝联盟</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/国内技术团队博客一览/" class="archive-title">国内技术团队博客一览</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/Genymotion安装中遇到的问题/" class="archive-title">Genymotion安装中遇到的问题</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/Android-代码规范/" class="archive-title">Android 代码规范</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/Service保活的三个方法/" class="archive-title">Service保活的三个方法</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/AsyncTask的缺陷和问题/" class="archive-title">AsyncTask的缺陷和问题</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/15/【技术分享】在iPhone上多开微信-安装迅雷/" class="archive-title">【技术分享】在iPhone上多开微信/安装迅雷</a>
-        <p class="archive-date">06-15</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/13/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">06-13</p>
-      </div>
-    
+  <h2>App接入淘宝联盟</h2>
+  <p class="post-date">2017-06-17</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
   </div>
-</section>
-
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content"><p>入口/方法有两种</p>
+<blockquote>
+<p>直接搜索，获取关键字，拼接URL</p>
+<p>跳转淘宝-拦截URL-当为商品时，获取商品id-判断是不是存在淘宝联盟中（获取淘宝联盟商品详情，判断是否存在）-有重新拼接URL-没有，提示用户没有</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e_success=&gt;end: 开始返利</div><div class="line">e_failed=&gt;end: 无法返利</div><div class="line">op1=&gt;operation: 整合搜索功能，直接拼接URL跳转</div><div class="line">op2=&gt;operation: 打开淘宝首页</div><div class="line">op3=&gt;operation: 生成订单，返回给后台，后台在</div><div class="line">用户拉取时时间刷新订单状态</div><div class="line">op2_1=&gt;operation: 不是联盟商品，进入提示没有返利</div><div class="line">，可以分享发展下线获得奖励</div><div class="line">cond0=&gt;condition: 跳转方式</div><div class="line">cond1=&gt;condition: 拦截商品页标签</div><div class="line">cond2=&gt;condition: 是联盟商品，</div><div class="line">进入提示有返利</div><div class="line">cond3=&gt;condition: 判断订单状态</div><div class="line">是否为 付款/成交</div><div class="line"></div><div class="line">st-&gt;cond0</div><div class="line">cond0(yes)-&gt;op1</div><div class="line">cond0(no)-&gt;op2</div><div class="line">op1-&gt;cond3</div><div class="line">op2-&gt;cond2</div><div class="line">cond2(no)-&gt;op2_1</div><div class="line">op2_1-&gt;e_failed</div><div class="line">cond2(yes)-&gt;cond3</div><div class="line">cond3(yes)-&gt;e_success</div><div class="line">cond3(no)-&gt;e_failed</div></pre></td></tr></table></figure></section>
+    
+    <div id="comments"></div>
+  </article>
 </main>
 
 <script>
   (function () {
-    var url = 'http://frrj.us/archives/2017/06/index.html';
+    var url = 'http://frrj.us/2017/06/17/App接入淘宝联盟/';
     $('#article-banner').geopattern(url);
     $('.header').removeClass('fixed-header');
+
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: url
+    });
+    
+    var gitmentConfig = "undefined";
+    if (gitmentConfig != "undefined") {
+      var gitment = new Gitment({
+        owner: "undefined",
+        repo: "undefined",
+        oauth: {
+          client_id: "undefined",
+          client_secret: "undefined"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://frrj.us/"/>
-  <updated>2017-06-17T02:00:50.000Z</updated>
+  <updated>2017-06-17T02:04:45.000Z</updated>
   <id>http://frrj.us/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>App接入淘宝联盟</title>
+    <link href="http://frrj.us/2017/06/17/App%E6%8E%A5%E5%85%A5%E6%B7%98%E5%AE%9D%E8%81%94%E7%9B%9F/"/>
+    <id>http://frrj.us/2017/06/17/App接入淘宝联盟/</id>
+    <published>2017-06-17T02:04:25.000Z</published>
+    <updated>2017-06-17T02:04:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>入口/方法有两种</p>
+<blockquote>
+<p>直接搜索，获取关键字，拼接URL</p>
+<p>跳转淘宝-拦截URL-当为商品时，获取商品id-判断是不是存在淘宝联盟中（获取淘宝联盟商品详情，判断是否存在）-有重新拼接URL-没有，提示用户没有</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e_success=&gt;end: 开始返利</div><div class="line">e_failed=&gt;end: 无法返利</div><div class="line">op1=&gt;operation: 整合搜索功能，直接拼接URL跳转</div><div class="line">op2=&gt;operation: 打开淘宝首页</div><div class="line">op3=&gt;operation: 生成订单，返回给后台，后台在</div><div class="line">用户拉取时时间刷新订单状态</div><div class="line">op2_1=&gt;operation: 不是联盟商品，进入提示没有返利</div><div class="line">，可以分享发展下线获得奖励</div><div class="line">cond0=&gt;condition: 跳转方式</div><div class="line">cond1=&gt;condition: 拦截商品页标签</div><div class="line">cond2=&gt;condition: 是联盟商品，</div><div class="line">进入提示有返利</div><div class="line">cond3=&gt;condition: 判断订单状态</div><div class="line">是否为 付款/成交</div><div class="line"></div><div class="line">st-&gt;cond0</div><div class="line">cond0(yes)-&gt;op1</div><div class="line">cond0(no)-&gt;op2</div><div class="line">op1-&gt;cond3</div><div class="line">op2-&gt;cond2</div><div class="line">cond2(no)-&gt;op2_1</div><div class="line">op2_1-&gt;e_failed</div><div class="line">cond2(yes)-&gt;cond3</div><div class="line">cond3(yes)-&gt;e_success</div><div class="line">cond3(no)-&gt;e_failed</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;入口/方法有两种&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;直接搜索，获取关键字，拼接URL&lt;/p&gt;
+&lt;p&gt;跳转淘宝-拦截URL-当为商品时，获取商品id-判断是不是存在淘宝联盟中（获取淘宝联盟商品详情，判断是否存在）-有重新拼接URL-没有，提示用户没有&lt;/p&gt;
+&lt;/blo
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>国内技术团队博客一览</title>
