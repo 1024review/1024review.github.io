@@ -7,7 +7,7 @@
   <meta name="keyword" content="undefined">
   <title>
     
-      凡人日记
+      博客搬家 | 凡人日记
     
   </title>
   <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
@@ -80,82 +80,64 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
-</div>
-<main class="app-body" id="archives">
-
-
-
-  <section class="time-section">
-  <h1 class="section-year">
-    2017
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2017/06/21/博客搬家/" class="archive-title">博客搬家</a>
-        <p class="archive-date">06-21</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/19/一份简历引发的遐想/" class="archive-title">一份简历引发的遐想</a>
-        <p class="archive-date">06-19</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/App接入淘宝联盟/" class="archive-title">App接入淘宝联盟</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/国内技术团队博客一览/" class="archive-title">国内技术团队博客一览</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/Genymotion安装中遇到的问题/" class="archive-title">Genymotion安装中遇到的问题</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/Android-代码规范/" class="archive-title">Android 代码规范</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/Service保活的三个方法/" class="archive-title">Service保活的三个方法</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/17/AsyncTask的缺陷和问题/" class="archive-title">AsyncTask的缺陷和问题</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/15/【技术分享】在iPhone上多开微信-安装迅雷/" class="archive-title">【技术分享】在iPhone上多开微信/安装迅雷</a>
-        <p class="archive-date">06-15</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/06/13/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">06-13</p>
-      </div>
-    
+  <h2>博客搬家</h2>
+  <p class="post-date">2017-06-21</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
   </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content"><p>其实博客之前是搭建在京东云上的<a href="http://mycode.live" target="_blank" rel="external">http://mycode.live</a>，但是京东云一再出问题：</p>
+<p>我之前绑定过一个域名，现在京东云的服务器上还有数据。要知道，我中途是rebuild了一次系统的！</p>
+<p>但是公网ip会掉。官方解释是，你的域名未备案，而且没有实名。</p>
+<p>我现在甚至把DNS解析都去掉了，公网ip依旧会掉。</p>
+<p>只好放弃，暂时在github上吧。</p>
+<p>还是希望京东吧自己的服务做好再说吧。</p>
 </section>
-
+    
+    <div id="comments"></div>
+  </article>
 </main>
 
 <script>
   (function () {
-    var url = 'http://frrj.us/archives/index.html';
+    var url = 'http://frrj.us/2017/06/21/博客搬家/';
     $('#article-banner').geopattern(url);
     $('.header').removeClass('fixed-header');
+
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: url
+    });
+    
+    var gitmentConfig = "undefined";
+    if (gitmentConfig != "undefined") {
+      var gitment = new Gitment({
+        owner: "undefined",
+        repo: "undefined",
+        oauth: {
+          client_id: "undefined",
+          client_secret: "undefined"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>

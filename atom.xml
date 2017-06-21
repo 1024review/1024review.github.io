@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://frrj.us/"/>
-  <updated>2017-06-19T09:44:49.000Z</updated>
+  <updated>2017-06-21T01:19:57.000Z</updated>
   <id>http://frrj.us/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客搬家</title>
+    <link href="http://frrj.us/2017/06/21/%E5%8D%9A%E5%AE%A2%E6%90%AC%E5%AE%B6/"/>
+    <id>http://frrj.us/2017/06/21/博客搬家/</id>
+    <published>2017-06-21T01:17:06.000Z</published>
+    <updated>2017-06-21T01:19:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实博客之前是搭建在京东云上的<a href="http://mycode.live" target="_blank" rel="external">http://mycode.live</a>，但是京东云一再出问题：</p>
+<p>我之前绑定过一个域名，现在京东云的服务器上还有数据。要知道，我中途是rebuild了一次系统的！</p>
+<p>但是公网ip会掉。官方解释是，你的域名未备案，而且没有实名。</p>
+<p>我现在甚至把DNS解析都去掉了，公网ip依旧会掉。</p>
+<p>只好放弃，暂时在github上吧。</p>
+<p>还是希望京东吧自己的服务做好再说吧。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实博客之前是搭建在京东云上的&lt;a href=&quot;http://mycode.live&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mycode.live&lt;/a&gt;，但是京东云一再出问题：&lt;/p&gt;
+&lt;p&gt;我之前绑定过一个域名，现在京东云的服务器
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>一份简历引发的遐想</title>
