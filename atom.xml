@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mycode.live/"/>
-  <updated>2017-08-02T01:36:12.000Z</updated>
+  <updated>2017-08-02T02:36:05.000Z</updated>
   <id>http://mycode.live/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端资料</title>
+    <link href="http://mycode.live/2017/08/02/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%96%99/"/>
+    <id>http://mycode.live/2017/08/02/前端资料/</id>
+    <published>2017-08-02T02:34:37.000Z</published>
+    <updated>2017-08-02T02:36:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这次分享的是前端资料，请原谅我混个ip，谢谢，</p>
+<p>下载地址：链接: <a href="https://pan.baidu.com/s/1o8gE8qe" target="_blank" rel="external">https://pan.baidu.com/s/1o8gE8qe</a> 密码: vpg5</p>
+<p>另外附上用github page免费搭建个人主页和其他页面的教程：</p>
+<embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=11428948&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">
+
+<p>视频地址：<a href="https://www.bilibili.com/video/av11428948/" target="_blank" rel="external">https://www.bilibili.com/video/av11428948/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这次分享的是前端资料，请原谅我混个ip，谢谢，&lt;/p&gt;
+&lt;p&gt;下载地址：链接: &lt;a href=&quot;https://pan.baidu.com/s/1o8gE8qe&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://pan.baidu.com/s
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>最近在干嘛</title>
