@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mycode.live/"/>
-  <updated>2017-07-07T06:11:32.000Z</updated>
+  <updated>2017-08-02T01:36:12.000Z</updated>
   <id>http://mycode.live/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最近在干嘛</title>
+    <link href="http://mycode.live/2017/08/02/%E6%9C%80%E8%BF%91%E5%9C%A8%E5%B9%B2%E5%98%9B/"/>
+    <id>http://mycode.live/2017/08/02/最近在干嘛/</id>
+    <published>2017-08-02T01:33:23.000Z</published>
+    <updated>2017-08-02T01:36:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>刚刚入职，找到了工作。依旧是一家小公司，关于汽车APP的开发。还是生活重要啊。</p>
+<p>注册了个可爱的域名 <a href="http://fuckbaidu.com" target="_blank" rel="external">http://fuckbaidu.com</a> 但是后来发现域名被墙了，瞬间无语……</p>
+<p>还是慢点来吧，慢点备案。</p>
+<p>租房的房租有点贵，而且那个破空调我日，超级费电……</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;刚刚入职，找到了工作。依旧是一家小公司，关于汽车APP的开发。还是生活重要啊。&lt;/p&gt;
+&lt;p&gt;注册了个可爱的域名 &lt;a href=&quot;http://fuckbaidu.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://fuckbaidu.c
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>在职场中学会表现</title>
@@ -80,7 +103,7 @@
     <published>2017-06-21T01:17:06.000Z</published>
     <updated>2017-06-21T01:19:57.000Z</updated>
     
-    <content type="html"><![CDATA[<p>其实博客之前是搭建在京东云上的<a href="http://mycode.live" target="_blank" rel="external">http://mycode.live</a>，但是京东云一再出问题：</p>
+    <content type="html"><![CDATA[<p>其实博客之前是搭建在京东云上的<a href="http://mycode.live">http://mycode.live</a>，但是京东云一再出问题：</p>
 <p>我之前绑定过一个域名，现在京东云的服务器上还有数据。要知道，我中途是rebuild了一次系统的！</p>
 <p>但是公网ip会掉。官方解释是，你的域名未备案，而且没有实名。</p>
 <p>我现在甚至把DNS解析都去掉了，公网ip依旧会掉。</p>
@@ -90,8 +113,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;其实博客之前是搭建在京东云上的&lt;a href=&quot;http://mycode.live&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mycode.live&lt;/a&gt;，但是京东云一再出问题：&lt;/p&gt;
-&lt;p&gt;我之前绑定过一个域名，现在京东云的服务器
+      &lt;p&gt;其实博客之前是搭建在京东云上的&lt;a href=&quot;http://mycode.live&quot;&gt;http://mycode.live&lt;/a&gt;，但是京东云一再出问题：&lt;/p&gt;
+&lt;p&gt;我之前绑定过一个域名，现在京东云的服务器上还有数据。要知道，我中途是rebuild了一次系统的！&lt;/p
     
     </summary>
     
