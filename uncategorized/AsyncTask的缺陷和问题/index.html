@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="null">
+  <meta name="keyword" content="undefined">
+  <title>
+    
+      AsyncTask的缺陷和问题 | 我是一只开心的代码狗
+    
+  </title>
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="/js/qrious.js"></script>
+  <script src="/js/gitment.js"></script>
+</head>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>我是一只开心的代码狗</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/atom.xml" class="item-link">Rss</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="http://zeozhang.gitbooks.io/python" class="item-link">Python</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/links" class="item-link">Links</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/atom.xml" class="menu-link">Rss</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="http://zeozhang.gitbooks.io/python" class="menu-link">Python</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/links" class="menu-link">Links</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+      <link rel="shortcut icon" href="http://7xufxm.com1.z0.glb.clouddn.com/%E4%BA%B2%E5%90%BB-2.png" type="image/vnd.microsoft.icon">
+
+</header>
+
+          <link rel="shortcut icon" href="http://7xufxm.com1.z0.glb.clouddn.com/%E4%BA%B2%E5%90%BB-2.png" type="image/vnd.microsoft.icon">
+
+<div id="article-banner">
+  <h2>AsyncTask的缺陷和问题</h2>
+  <p class="post-date">2017-06-17</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content"><p>只是分析一下AsyncTask的缺陷和问题</p>
+<p>asynctask对应的线程池ThreadPoolExecutor都是进程范围内共享的，都是static的，所以是asynctask控制着进程范围内所有的子类实例。由于这个限制的存在，当使用默认线程池时，如果线程数超过线程池的最大容量，线程池就会爆掉(3.0后默认串行执行，不会出现这个问题)。针对这种情况，可以尝试自定义线程池，配合asynctask使用。</p>
+<blockquote>
+<p>核心线程池中最多有CPU_COUNT+1个，最多有CPU_COUNT*2+1个，线程等待队列的最大等待数为128，但是可以自定义线程池。线程池是由AsyncTask来管理的，线程池允许tasks并行运行，需要注意的是并发情况下数据的一致性问题，新数据可能会被老数据覆盖掉，类似volatile变量。所以希望tasks能够串行运行的话，使用SERIAL_EXECUTOR。</p>
+</blockquote>
+<p>AsyncTask在SDK 1.6之前，异步任务是放在一个独立的线程中的。也就是说所有的异步操作需要一个一个进行。1.6之后可以进行五个。如果AsyncTask实例超过5个则需要等待。2.3版本之前这个问题是无法解决了。<br>2.3之后可以自定义线程池，但是必须放弃AsyncTask，自己创建线程池来管理Thread。</p>
+<p><em>从Android3.0开始对AsyncTask的API作出了一些调整：每次只启动一个线程执行一个任务，完成之后再执行第二个任务，也就是相当于只有一个后台线程在执行所提交的任务</em></p>
+<p><strong>1.生命周期</strong></p>
+<p>很多开发者会认为一个在Activity中创建的AsyncTask会随着Activity的销毁而销毁。然而事实并非如此。AsyncTask会一直执行，直到doInBackground()方法执行完毕。然后，如果cancel(boolean)被调用,那么onCancelled(Result result)方法会被执行；否则，执行onPostExecute(Result result)方法。如果我们的Activity销毁之前，没有取消AsyncTask，这有可能让我们的AsyncTask崩溃(crash)。因为它想要处理的view已经不在了。所以，我们总是必须确保在销毁活动之前取消任务。总之，我们使用AsyncTask需要确保AsyncTask正确的取消。</p>
+<p><strong>2.内存泄漏</strong></p>
+<p>如果AsyncTask被声明为Activity的非静态的内部类，那么AsyncTask会保留一个对Activity的引用。如果Activity已经被销毁，AsyncTask的后台线程还在执行，它将继续在内存里保留这个引用，导致Activity无法被回收，引起内存泄漏。</p>
+<p><strong>3.结果丢失</strong></p>
+<p>屏幕旋转或Activity在后台被系统杀掉等情况会导致Activity的重新创建，之前运行的AsyncTask会持有一个之前Activity的引用，这个引用已经无效，这时调用onPostExecute()再去更新界面将不再生效。</p>
+<p><strong>4.并行还是串行</strong></p>
+<p>在Android1.6之前的版本，AsyncTask是串行的，在1.6至2.3的版本，改成了并行的。在2.3之后的版本又做了 修改，可以支持并行和串行，当想要串行执行时，直接执行execute()方法，如果需要执行executeOnExecutor(Executor)。</p>
+</section>
+    
+    <div id="comments"></div>
+  </article>
+</main>
+
+<script>
+  (function () {
+    var url = 'http://mycode.live/uncategorized/AsyncTask的缺陷和问题/';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
+
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: url
+    });
+    
+    var gitmentConfig = "undefined";
+    if (gitmentConfig != "undefined") {
+      var gitment = new Gitment({
+        owner: "undefined",
+        repo: "undefined",
+        oauth: {
+          client_id: "undefined",
+          client_secret: "undefined"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2017 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine == 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || '';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6019504eab92ca237d1169cd6f3f4e70";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

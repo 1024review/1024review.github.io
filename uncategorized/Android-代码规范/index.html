@@ -7,7 +7,7 @@
   <meta name="keyword" content="undefined">
   <title>
     
-      我是一只开心的代码狗
+      Android 代码规范 | 我是一只开心的代码狗
     
   </title>
   <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
@@ -103,108 +103,72 @@
 
 </header>
 
-    <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
-</div>
-<main class="app-body" id="archives">
+          <link rel="shortcut icon" href="http://7xufxm.com1.z0.glb.clouddn.com/%E4%BA%B2%E5%90%BB-2.png" type="image/vnd.microsoft.icon">
 
-
-
-  <section class="time-section">
-  <h1 class="section-year">
-    2017
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/一个简单的流布局/" class="archive-title">一个简单的流布局</a>
-        <p class="archive-date">08-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/前端资料/" class="archive-title">前端资料</a>
-        <p class="archive-date">08-02</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/最近在干嘛/" class="archive-title">最近在干嘛</a>
-        <p class="archive-date">08-02</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/在职场中学会表现/" class="archive-title">在职场中学会表现</a>
-        <p class="archive-date">07-07</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/忽然想到理想这个词/" class="archive-title">忽然想到理想这个词</a>
-        <p class="archive-date">06-24</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/博客搬家/" class="archive-title">博客搬家</a>
-        <p class="archive-date">06-21</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/一份简历引发的遐想/" class="archive-title">一份简历引发的遐想</a>
-        <p class="archive-date">06-19</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/App接入淘宝联盟/" class="archive-title">App接入淘宝联盟</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/国内技术团队博客一览/" class="archive-title">国内技术团队博客一览</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/Genymotion安装中遇到的问题/" class="archive-title">Genymotion安装中遇到的问题</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/Android-代码规范/" class="archive-title">Android 代码规范</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/Service保活的三个方法/" class="archive-title">Service保活的三个方法</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/AsyncTask的缺陷和问题/" class="archive-title">AsyncTask的缺陷和问题</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/【技术分享】在iPhone上多开微信-安装迅雷/" class="archive-title">【技术分享】在iPhone上多开微信/安装迅雷</a>
-        <p class="archive-date">06-15</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">06-13</p>
-      </div>
-    
+<div id="article-banner">
+  <h2>Android 代码规范</h2>
+  <p class="post-date">2017-06-17</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
   </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content"><p>1.类名禁止出现特殊符号</p>
+<p>2.变量名不能以特殊符号开头或结尾</p>
+<p>3.变量名中禁止使用拼音加英文，更不能出现汉字。应该使用全英文</p>
+<p>4.类名命名必须使用大驼峰命名法，变量必须使用小驼峰命名法。静态变量全部大写，特殊单词（领域模型的相关命名）例外，例如DO / BO / DTO / VO 等</p>
+<p>5.见名知意，命名简单明了</p>
+<p>6.缩写单词要参照习惯，不能主观更改，例如AbstractClase写成AbsClass</p>
+<p>7.抽象类命名使用 Abstract 或 Base 开头；异常类命名使用 Exception 结尾；测试类<br>命名以它要测试的类的名称开始，以 Test 结尾。项目上线前统一删除Test类</p>
+<p>8.命名中避免关键字</p>
+<p>9.包名统一小写，com.domain.模块.作用 ，Model类和数据接口类单独列包</p>
+<p>10.枚举类和变量以Enum（enum）开头（结尾）</p>
+<p>11.类名命名为 类型（Enum/Abstract）+ 类名（GetMessage）+ 定义（Utils/Exception）；变量命名可以单独说明在本类中的作用，例如userMessages；id的命名应该为 “<code>模块_类型_变量名“</code>,个别需要加标识符。</p>
 </section>
-
+    
+    <div id="comments"></div>
+  </article>
 </main>
 
 <script>
   (function () {
-    var url = 'http://mycode.live/archives/2017/06/index.html';
+    var url = 'http://mycode.live/uncategorized/Android-代码规范/';
     $('#article-banner').geopattern(url);
     $('.header').removeClass('fixed-header');
+
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: url
+    });
+    
+    var gitmentConfig = "undefined";
+    if (gitmentConfig != "undefined") {
+      var gitment = new Gitment({
+        owner: "undefined",
+        repo: "undefined",
+        oauth: {
+          client_id: "undefined",
+          client_secret: "undefined"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>

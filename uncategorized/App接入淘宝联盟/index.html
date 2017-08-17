@@ -7,7 +7,7 @@
   <meta name="keyword" content="undefined">
   <title>
     
-      我是一只开心的代码狗
+      App接入淘宝联盟 | 我是一只开心的代码狗
     
   </title>
   <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
@@ -103,108 +103,66 @@
 
 </header>
 
-    <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
-</div>
-<main class="app-body" id="archives">
+          <link rel="shortcut icon" href="http://7xufxm.com1.z0.glb.clouddn.com/%E4%BA%B2%E5%90%BB-2.png" type="image/vnd.microsoft.icon">
 
-
-
-  <section class="time-section">
-  <h1 class="section-year">
-    2017
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/一个简单的流布局/" class="archive-title">一个简单的流布局</a>
-        <p class="archive-date">08-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/前端资料/" class="archive-title">前端资料</a>
-        <p class="archive-date">08-02</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/最近在干嘛/" class="archive-title">最近在干嘛</a>
-        <p class="archive-date">08-02</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/在职场中学会表现/" class="archive-title">在职场中学会表现</a>
-        <p class="archive-date">07-07</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/忽然想到理想这个词/" class="archive-title">忽然想到理想这个词</a>
-        <p class="archive-date">06-24</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/博客搬家/" class="archive-title">博客搬家</a>
-        <p class="archive-date">06-21</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/一份简历引发的遐想/" class="archive-title">一份简历引发的遐想</a>
-        <p class="archive-date">06-19</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/App接入淘宝联盟/" class="archive-title">App接入淘宝联盟</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/国内技术团队博客一览/" class="archive-title">国内技术团队博客一览</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/Genymotion安装中遇到的问题/" class="archive-title">Genymotion安装中遇到的问题</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/Android-代码规范/" class="archive-title">Android 代码规范</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/Service保活的三个方法/" class="archive-title">Service保活的三个方法</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/AsyncTask的缺陷和问题/" class="archive-title">AsyncTask的缺陷和问题</a>
-        <p class="archive-date">06-17</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/【技术分享】在iPhone上多开微信-安装迅雷/" class="archive-title">【技术分享】在iPhone上多开微信/安装迅雷</a>
-        <p class="archive-date">06-15</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/uncategorized/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">06-13</p>
-      </div>
-    
+<div id="article-banner">
+  <h2>App接入淘宝联盟</h2>
+  <p class="post-date">2017-06-17</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
   </div>
-</section>
-
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content"><p>入口/方法有两种</p>
+<blockquote>
+<p>直接搜索，获取关键字，拼接URL</p>
+<p>跳转淘宝-拦截URL-当为商品时，获取商品id-判断是不是存在淘宝联盟中（获取淘宝联盟商品详情，判断是否存在）-有重新拼接URL-没有，提示用户没有</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: 开始</div><div class="line">e_success=&gt;end: 开始返利</div><div class="line">e_failed=&gt;end: 无法返利</div><div class="line">op1=&gt;operation: 整合搜索功能，直接拼接URL跳转</div><div class="line">op2=&gt;operation: 打开淘宝首页</div><div class="line">op3=&gt;operation: 生成订单，返回给后台，后台在</div><div class="line">用户拉取时时间刷新订单状态</div><div class="line">op2_1=&gt;operation: 不是联盟商品，进入提示没有返利</div><div class="line">，可以分享发展下线获得奖励</div><div class="line">cond0=&gt;condition: 跳转方式</div><div class="line">cond1=&gt;condition: 拦截商品页标签</div><div class="line">cond2=&gt;condition: 是联盟商品，</div><div class="line">进入提示有返利</div><div class="line">cond3=&gt;condition: 判断订单状态</div><div class="line">是否为 付款/成交</div><div class="line"></div><div class="line">st-&gt;cond0</div><div class="line">cond0(yes)-&gt;op1</div><div class="line">cond0(no)-&gt;op2</div><div class="line">op1-&gt;cond3</div><div class="line">op2-&gt;cond2</div><div class="line">cond2(no)-&gt;op2_1</div><div class="line">op2_1-&gt;e_failed</div><div class="line">cond2(yes)-&gt;cond3</div><div class="line">cond3(yes)-&gt;e_success</div><div class="line">cond3(no)-&gt;e_failed</div></pre></td></tr></table></figure></section>
+    
+    <div id="comments"></div>
+  </article>
 </main>
 
 <script>
   (function () {
-    var url = 'http://mycode.live/archives/2017/06/index.html';
+    var url = 'http://mycode.live/uncategorized/App接入淘宝联盟/';
     $('#article-banner').geopattern(url);
     $('.header').removeClass('fixed-header');
+
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: url
+    });
+    
+    var gitmentConfig = "undefined";
+    if (gitmentConfig != "undefined") {
+      var gitment = new Gitment({
+        owner: "undefined",
+        repo: "undefined",
+        oauth: {
+          client_id: "undefined",
+          client_secret: "undefined"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
